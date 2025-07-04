@@ -116,7 +116,7 @@
   </style>
 </head>
 <body>
-  <h1>🎯 Guess My Number (1 - 20)</h1>
+  <h1>Guess My Number (1 - 20)</h1>
 
   <div class="number-container">
     <div class="line-behind"></div>
@@ -132,8 +132,8 @@
   <p class="message" id="message">Start guessing...</p>
 
   <div class="scoreboard">
-    💯 Score: <span id="score">20</span><br />
-    🏆 Highscore: <span id="highscore">0</span>
+    Score: <span id="score">20</span><br />
+    Highscore: <span id="highscore">0</span>
   </div>
 
   <script>
@@ -170,10 +170,10 @@
       numberBox.classList.remove('shake');
 
       if (!guess || guess < 1 || guess > 20) {
-        displayMessage("🚫 Enter a number between 1 and 20!");
+        displayMessage(" Enter a number between 1 and 20!");
         numberBox.classList.add('shake');
       } else if (guess === secretNumber) {
-        displayMessage("🎉 Correct Number! 🎯🔥");
+        displayMessage(" Correct Number! ");
         numberBox.innerHTML = `<span class="styled-question">${secretNumber}</span>`;
         document.body.style.backgroundColor = "#60b347";
         showConfetti();
@@ -184,12 +184,12 @@
         }
       } else {
         if (score > 1) {
-          displayMessage(guess > secretNumber ? "📉 Too high! 😬" : "📈 Too low! 😅");
+          displayMessage(guess > secretNumber ? " Too high! " : "Too low! ");
           score--;
           document.getElementById("score").textContent = score;
           numberBox.classList.add('shake');
         } else {
-          displayMessage("💥 You lost the game! 😢");
+          displayMessage(" You lost the game! ");
           document.getElementById("score").textContent = 0;
           numberBox.innerHTML = `<span class="styled-question">${secretNumber}</span>`;
         }
